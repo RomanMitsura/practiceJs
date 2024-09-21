@@ -1,8 +1,8 @@
 const car = {
   model: "Tyota",
   year: 2007,
-  showModel: function () {
-    console.log(this.model);
+  showModel: function (color, engine) {
+    console.log(this.model, color, engine);
   },
 };
 
@@ -12,5 +12,8 @@ const anotherCar = {
 };
 // console.log(car.model);
 
-const test = car.showModel.bind(anotherCar);
-test();
+car.showModel.apply(anotherCar, ["red", "disel"]);
+car.showModel.call(anotherCar, "green", "gas");
+const newFunc = car.showModel.bind(anotherCar, ["orange", "electro"]);
+
+newFunc();

@@ -14,6 +14,6 @@ const anotherCar = {
 
 car.showModel.apply(anotherCar, ["red", "disel"]);
 car.showModel.call(anotherCar, "green", "gas");
-const newFunc = car.showModel.bind(anotherCar, ["orange", "electro"]);
+const newFunc = car.showModel.bind(anotherCar);
 
-newFunc();
+newFunc("orange", "electro");

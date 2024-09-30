@@ -16,6 +16,12 @@ const examplePerson = new Person("Рома", 21);
 
 //Создаем класс developer который является полной копией класса Person
 class Developer extends Person {
+  constructor(name, age, experience) {
+    // добавление параметра опыт для конструктора developer
+    super(name, age); // вызов конструктора родительского класса
+    this.experience = experience;
+  }
+
   writeCode() {
     console.log("Пишу код...", this.name);
   }
@@ -27,17 +33,6 @@ class Developer extends Person {
   }
 }
 
-class JavaScriptDeveloper extends Developer {
-  makeFrontend() {
-    console.log("Пишу фронт...");
-  }
+const developerExample = new Developer("Миша", 21, 3);
 
-  eat() {
-    super.eat(); //переиспользование функционала из родительского класса
-    console.log("Смотрю ютуб"); //добавление функционала в eat для JavaScriptDeveloper
-  }
-}
-
-const jsDeveloperExample = new JavaScriptDeveloper("Рома", 21);
-
-jsDeveloperExample.eat();
+console.log(developerExample.experience);

@@ -41,9 +41,10 @@ class Student {
     return `Фамилия этого студента ${this._lastName}`;
   }
 
-  logAge() {
+  static logAge() {
+    //статик дописывается для обращения к методу без "конкретного экзеспляр". Но с экземлярами класса использовать мы не сможем
     //метод
-    console.log(this.age);
+    console.log("Какое-то имя");
   }
 
   #someSecretAction() {
